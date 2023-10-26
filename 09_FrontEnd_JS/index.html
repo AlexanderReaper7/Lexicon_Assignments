@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Övning 9</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/82841f8b35.js" crossorigin="anonymous"></script>
+    <script src="BishBosh.js"></script>
+    <script src="ToDoList.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container-fluid">
+    <h1 class="mt-2">Bish-Bosh</h1>
+    <p>Bish-Bosh listar alla tal mellan 1 och 100, men vissa undantag: Om talet är jämnt delbart
+        med 3 listas ​‘Bish’ iställe för talet. Om talet är jämnt delbart med 4 listas ‘​Bosh​’ istället för
+        talet. Om talet är jämnt delbart med både med 3 och 4 skrivs “Bish-Bosh​” ​istället ​för talet.
+
+        Exempel:
+        1, 2, Bish, Bosh, 5,Bish, 7,Bosh,Bish, 10, 11,Bish-Bosh, 13, 14,Bish ​[...]
+    </p>
+    <div class="row">
+        <div class="form-group col ">
+            <label for="length">length</label>
+            <input type="text" id="length" class="form-control" value=100>
+        </div>
+        <div class="form-group col">
+            <label for="bish">bish</label>
+            <input type="text" id="bish" class="form-control" value=3>
+        </div>
+        <div class="form-group col">
+            <label for="bosh">bosh</label>
+            <input type="text" id="bosh" class="form-control" value=4>
+        </div>
+        <button onclick="BishBosh.run()" class="col-1 btn btn-primary me-2">Run</button>
+    </div>
+    <code class="row m-2"><textarea id="output">output goes here</textarea></code>
+    <hr>
+    <h1>ToDo List</h1>
+    <div class="row">
+        <div class="d-flex col">
+            <input type="text" id="newToDo" class="form-control" placeholder="ToDo">
+            <button id="newToDobtn" onclick="ToDoList.add()" class="btn btn-primary">Add</button>
+        </div>
+    </div>
+    <div id="toDoList">
+        <!-- Example todo item -->
+        <template id="todoitem">
+            <li class="d-flex m-1 p-1 px-2 rounded bg-light shadow-sm">
+                <input type="checkbox" onclick="ToDoList.toggle(0)" class="me-1 my-auto shadow-sm">
+                <label class="text-truncate">Todo 0</label>
+                <i class="fa-solid fa-trash-can ms-auto my-auto" onclick="ToDoList.remove(0)"></i>
+            </li>
+        </template>
+        <!-- Example completed todo item -->
+        <template id="donetodoitem">
+            <li class="d-flex m-1 p-1 px-2 rounded bg-secondary shadow-sm">
+                <input type="checkbox" checked onclick="ToDoList.toggle(1)" class="me-1 my-auto shadow-sm">
+                <label class="text-light text-truncate"><del>Todo 1</del></label>
+                <i class="fa-solid fa-trash-can ms-auto my-auto" onclick="ToDoList.remove(1)"></i>
+            </li>
+        </template>
+    </div>
+</body>
+
+</html>
