@@ -11,6 +11,6 @@
 
 # [08_Bootstrap](/08_Bootstrap/)
 
-# [09_Frontend_JS](/09_Frontend_JS/)
+# [09_FrontEnd_JS](/09_FrontEnd_JS/)
 
 # [10_JS_API](/10_JS_API/)
